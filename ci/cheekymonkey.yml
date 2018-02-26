@@ -1,13 +1,13 @@
 resources:
-- name: source_code
+- name: sourcecode
   type: git
   source:
-    uri: git@github.com:petegee/CheekyMonkey.git
+    uri: https://github.com/petegee/CheekyMonkey.git
     
 jobs:
 - name: BuildDockerImage
   plan:
-  - get: source_code
+  - get: sourcecode
     trigger: true
   - task: build
     config:
@@ -17,4 +17,4 @@ jobs:
         source: {repository: microsoft/dotnet}
       run:
         path: sh
-        args: ["source_code/ci/build.sh"]
+        args: ["sourcecode/ci/build.sh"]
