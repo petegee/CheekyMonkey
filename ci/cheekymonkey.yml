@@ -3,8 +3,7 @@ resources:
   type: git
   source:
     uri: git@github.com:petegee/CheekyMonkey.git
-    branch: master
-
+    
 jobs:
 - name: BuildDockerImage
   plan:
