@@ -15,7 +15,7 @@ jobs:
       platform: linux
       image_resource:
         type: docker-image
-        source: {repository: microsoft/dotnet:sdk}
+        source: {repository: microsoft/dotnet}
       run:
         path: sh
         args: ["source_code/ci/build.sh"]
