@@ -11,7 +11,7 @@ namespace CheekyMonkey
             switch (Random.Next(0, 4))
             {
                 case 0:
-                    return "Chimpanzee that!";
+                    return "Chimpanzee that!!";
                 case 1:
                     return "Monkey news!";
                 case 2:
