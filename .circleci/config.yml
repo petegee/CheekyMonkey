@@ -13,7 +13,7 @@ jobs:
           command: dotnet build 
       - run:
           name: test
-          command: dotnet test .\CheekyTests\CheekyTests.csproj
+          command: dotnet test ./CheekyTests/CheekyTests.csproj
       - run:
           name: Run
           command: dotnet run Debug -p ./CheekyMonkey/CheekyMonkey.csproj
