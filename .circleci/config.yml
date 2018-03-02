@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  test:
     docker:
       - image: microsoft/dotnet
     steps:
@@ -14,6 +14,23 @@ jobs:
       - run:
           name: test
           command: dotnet test ./CheekyTests/CheekyTests.csproj
+  run:
+    docker:
+      - image: microsoft/dotnet
+    steps:
+      - checkout
+      - run:
+          name: restore
+          command: dotnet restore 
+      - run:
+          name: build
+          command: dotnet build 
       - run:
           name: Run
           command: dotnet run Debug -p ./CheekyMonkey/CheekyMonkey.csproj
+workflows:
+  version: 2
+  test_and_run:
+    jobs:
+      - test
+      - run
