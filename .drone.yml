@@ -1,0 +1,8 @@
+pipeline:
+  build:
+    image: microsoft/dotnet
+    commands:
+      - dotnet restore 
+      - dotnet build 
+      - dotnet test ./CheekyTests/CheekyTests.csproj
+      - dotnet run Debug -p ./CheekyMonkey/CheekyMonkey.csproj
