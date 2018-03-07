@@ -16,5 +16,4 @@ jobs:
         type: docker-image
         source: {repository: microsoft/dotnet}
       run:
-        path: sh
-        args: ["sourcecode/ci/build.sh"]
+        path: ./sourcecode/ci/build.sh
