@@ -1,5 +1,5 @@
 #!/bin/bash
-cd ../
+cd sourcecode
 
 dotnet restore
 dotnet build
