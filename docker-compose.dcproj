@@ -5,11 +5,4 @@
     <DockerTargetOS>Linux</DockerTargetOS>
     <ProjectGuid>c0ce80ae-c71b-4778-b8d0-7c77c70d756f</ProjectGuid>
   </PropertyGroup>
-  <ItemGroup>
-    <None Include="docker-compose.ci.build.yml" />
-    <None Include="docker-compose.override.yml">
-      <DependentUpon>docker-compose.yml</DependentUpon>
-    </None>
-    <None Include="docker-compose.yml" />
-  </ItemGroup>
 </Project>

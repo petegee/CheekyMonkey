@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheekyMonkey", "CheekyMonke
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheekyTests", "CheekyTests\CheekyTests.csproj", "{B7EB0D9F-1366-4CEA-8224-8B407841607D}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{C0CE80AE-C71B-4778-B8D0-7C77C70D756F}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CI", "CI", "{C72EAFC4-8833-4AA6-B7C5-91F5B83D881D}"
 	ProjectSection(SolutionItems) = preProject
 		ci\build.sh = ci\build.sh
@@ -31,10 +29,6 @@ Global
 		{B7EB0D9F-1366-4CEA-8224-8B407841607D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7EB0D9F-1366-4CEA-8224-8B407841607D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7EB0D9F-1366-4CEA-8224-8B407841607D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C0CE80AE-C71B-4778-B8D0-7C77C70D756F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C0CE80AE-C71B-4778-B8D0-7C77C70D756F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C0CE80AE-C71B-4778-B8D0-7C77C70D756F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C0CE80AE-C71B-4778-B8D0-7C77C70D756F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
