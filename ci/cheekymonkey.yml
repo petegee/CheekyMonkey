@@ -4,10 +4,21 @@ resources:
   source:
     uri: https://github.com/petegee/CheekyMonkey.git
 
+- name: hello-world-docker-image
+  type: docker-image
+  source:
+    email: peteg@hotmail.co.nz
+    username: peteg
+    password: ((docker-hub-password))
+    repository: peteg/cheekymonkey
+    
 jobs:
-- name: BuildDockerImage
+- name: job-build-and-publish-docker-image
   plan:
   - get: sourcecode
     trigger: true
+  - put: hello-world-docker-image
+    params:
+      build: sourcecode
   - task: build
     file: sourcecode/build.yml
