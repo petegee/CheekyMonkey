@@ -17,8 +17,8 @@ jobs:
   plan:
   - get: sourcecode
     trigger: true
+  - task: build
+    file: sourcecode/build.yml
   - put: hello-world-docker-image
     params:
       build: sourcecode
-  - task: build
-    file: sourcecode/build.yml
