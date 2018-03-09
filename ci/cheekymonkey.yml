@@ -11,12 +11,16 @@ jobs:
     trigger: true
   - task: build-app
     config:
-      platform: linux
-      image_resource:
-        type: docker-image
-        source: {microsoft/dotnet}
-      inputs:
-      - name: sourcecode
-      run:
-        path: sh
-        args: ["sourcecode/ci/build.sh"]
+    platform: linux
+
+    image_resource:
+      type: docker-image
+      source:
+        repository: microsoft/dotnet
+
+    inputs:
+    - name: sourcecode
+
+    run:
+      path: sh
+      args: ["sourcecode/ci/build.sh"]
