@@ -4,13 +4,6 @@ resources:
   source:
     uri: https://github.com/petegee/CheekyMonkey.git
 
-#- name: app-docker-image
-#  type: docker-image
-#  source:
-#    email: peteg@hotmail.co.nz
-#    username: peteg
-#    password: ((docker-hub-password))
-#    repository: peteg/cheekymonkey 
 jobs:
 - name: job-build-and-test-app
   plan:
@@ -22,10 +15,8 @@ jobs:
       image_resource:
         type: docker-image
         source: {microsoft/dotnet}
-
       inputs:
       - name: sourcecode
-
       run:
         path: sh
         args: ["sourcecode/ci/build.sh"]
