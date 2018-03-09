@@ -1,6 +1,7 @@
 FROM microsoft/dotnet
 WORKDIR app
-ADD ./ci/publish.sh .
+ADD ./sourecode sourcecode
+ADD ./sourecode/ci/publish.sh .
 RUN ["chmod", "+x", "publish.sh"]
 RUN ./publish.sh
 ADD ./obj/Docker/publish .
