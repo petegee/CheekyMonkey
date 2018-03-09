@@ -17,8 +17,7 @@ jobs:
 - name: job-build-and-test-app
   plan:
   - get: sourcecode
-    trigger: true 
-  - put: sourcecode
+    trigger: true
   - task: unit-test
     config:
       platform: linux
@@ -33,8 +32,9 @@ jobs:
         args: ["sourcecode/ci/test.sh"]
 
 - name: publish
+  serial: true
   plan:
   - get: sourcecode
   - put: hello-world-docker-image
     params:
-      build: sourcecode
+      build: ./sourcecode/Dockerfile
