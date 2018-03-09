@@ -1,5 +1,5 @@
 FROM microsoft/dotnet:2.0-runtime
-ARG source
-WORKDIR /app
-ADD sourcecode/CheekyMonkey/obj/Docker/publish .
+WORKDIR ./
+RUN ./ci/publish.sh
+ADD ./obj/Docker/publish .
 ENTRYPOINT ["dotnet", "CheekyMonkey.dll"]

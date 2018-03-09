@@ -9,10 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheekyTests", "CheekyTests\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CI", "CI", "{C72EAFC4-8833-4AA6-B7C5-91F5B83D881D}"
 	ProjectSection(SolutionItems) = preProject
-		ci\build.sh = ci\build.sh
-		build.yml = build.yml
 		ci\cheekymonkey.yml = ci\cheekymonkey.yml
 		Dockerfile = Dockerfile
+		ci\publish.sh = ci\publish.sh
+		ci\test.sh = ci\test.sh
 	EndProjectSection
 EndProject
 Global
