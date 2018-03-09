@@ -4,7 +4,7 @@ resources:
   source:
     uri: https://github.com/petegee/CheekyMonkey.git
 
-- name: hello-world-docker-image
+- name: app-docker-image
   type: docker-image
   source:
     email: peteg@hotmail.co.nz
@@ -17,8 +17,35 @@ jobs:
   plan:
   - get: sourcecode
     trigger: true
-  - task: build
-    file: sourcecode/build.yml
-  - put: hello-world-docker-image
+  - put: app-docker-image
     params:
       build: sourcecode
+   
+  - task: build-app
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source: {microsoft/dotnet}
+
+      inputs:
+      - name: sourcecode
+      outputs:
+      - name: app
+
+      run:
+        path: sh
+        args: ["sourcecode/ci/build.sh"]
+
+
+  - task: build-docker
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source: {microsoft/dotnet}
+
+      inputs:
+      - name: app
+      outputs:
+      - name: app-docker-image
