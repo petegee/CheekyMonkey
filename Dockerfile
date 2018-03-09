@@ -1,4 +1,4 @@
-FROM microsoft/dotnet:2.0-runtime
+FROM microsoft/dotnet
 WORKDIR app
 ADD ./ci/publish.sh .
 RUN ["chmod", "+x", "publish.sh"]

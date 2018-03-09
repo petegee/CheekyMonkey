@@ -1,5 +1,4 @@
 #!/bin/bash
-cd sourcecode
 
 echo Restoring
 dotnet restore ./CheekyMonkey.sln
