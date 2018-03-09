@@ -10,8 +10,7 @@ resources:
 #    email: peteg@hotmail.co.nz
 #    username: peteg
 #    password: ((docker-hub-password))
-#    repository: peteg/cheekymonkey
-    
+#    repository: peteg/cheekymonkey 
 jobs:
 - name: job-build-and-test-app
   plan:
