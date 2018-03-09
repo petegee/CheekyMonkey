@@ -37,4 +37,4 @@ jobs:
   - get: sourcecode
   - put: hello-world-docker-image
     params:
-      build: ./sourcecode/Dockerfile
+      build: ./sourcecode/
