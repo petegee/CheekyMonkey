@@ -1,6 +1,6 @@
 FROM microsoft/dotnet:2.0-runtime
 WORKDIR app
-ADD ./ci/.
+ADD ./ci/publish.sh .
 RUN ["chmod", "+x", "publish.sh"]
 RUN ./publish.sh
 ADD ./obj/Docker/publish .
