@@ -4,4 +4,4 @@ ADD . sourcecode
 ADD ./ci/publish.sh .
 RUN ["chmod", "+x", "publish.sh"]
 RUN ./publish.sh
-ENTRYPOINT ["dotnet", "CheekyMonkey.dll"]
+ENTRYPOINT ["dotnet", "run", "CheekyMonkey"]
