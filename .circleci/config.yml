@@ -16,6 +16,7 @@ jobs:
           command: dotnet test ./CheekyTests/CheekyTests.csproj
   docker-image:
     machine: true
+    context: CheekyMonkey
     steps:
       - checkout
       - run:
