@@ -14,20 +14,19 @@ jobs:
       - run:
           name: test
           command: dotnet test ./CheekyTests/CheekyTests.csproj
-  run:
-    docker:
-      - image: microsoft/dotnet
+  docker-image:
+    machine: true
     steps:
       - checkout
       - run:
-          name: restore
-          command: dotnet restore 
-      - run:
-          name: build
-          command: dotnet build 
-      - run:
-          name: Run
-          command: dotnet run Debug -p ./CheekyMonkey/CheekyMonkey.csproj
+          name: docker-image
+          command: |
+            TAG=latest
+            IMAGE=application_name
+            docker build -t $IMAGE:$TAG .
+            docker login $DOCKER_REGISTRY -u $DOCKER_REGISTRY_USER -p $DOCKER_REGISTRY_PASSWORD
+            docker tag $IMAGE:$TAG $DOCKER_REGISTRY/$IMAGE:$TAG
+            docker push $DOCKER_REGISTRY/$IMAGE:$TAG
 workflows:
   version: 2
   test_and_run:
