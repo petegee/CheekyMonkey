@@ -29,9 +29,9 @@ jobs:
             docker push $DOCKER_REGISTRY/$IMAGE:$TAG
 workflows:
   version: 2
-  test_and_run:
+  test_and_build:
     jobs:
       - test
-      - run:
+      - docker-image:
           requires:
             - test
