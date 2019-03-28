@@ -10,7 +10,7 @@ jobs:
           command: dotnet restore ./CheekyTests/CheekyTests.csproj
       - run:
           name: build
-          command: dotnet build 
+          command: dotnet build ./CheekyTests/CheekyTests.csproj
       - run:
           name: test
           command: dotnet test ./CheekyTests/CheekyTests.csproj
