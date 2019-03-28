@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: restore
-          command: dotnet restore 
+          command: dotnet restore ./CheekyTests/CheekyTests.csproj
       - run:
           name: build
           command: dotnet build 
